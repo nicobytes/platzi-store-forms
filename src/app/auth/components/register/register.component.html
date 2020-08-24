@@ -7,6 +7,7 @@
       <div class="row">
         <div class="col-xs">
           <mat-form-field>
+            <mat-label>Email</mat-label>
             <input placeholder="email" formControlName="email" matInput type="email">
           </mat-form-field>
         </div>
@@ -14,14 +15,33 @@
       <div class="row">
         <div class="col-xs">
           <mat-form-field>
+            <mat-label>Password</mat-label>
             <input placeholder="password" formControlName="password" matInput type="password">
+            <div class="messages">
+              <mat-error *ngIf="form.get('password').touched && form.get('password').hasError('invalidPassword')">
+                El campo no tiene numero
+              </mat-error>
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Confirm Password</mat-label>
+            <input placeholder="password" formControlName="confirm" matInput type="password">
+            <div class="messages">
+              <mat-error *ngIf="form.get('confirm').touched && form.hasError('notMatchPassword')">
+                No coincide
+              </mat-error>
+            </div>
           </mat-form-field>
         </div>
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button [disabled]="form.invalid" mat-raised-button type="submit">Registro</button>
+      <button [disabled]="form.invalid" mat-raised-button color="primary" type="submit">Registro</button>
     </mat-card-actions>
   </mat-card>
-  
+
 </form>

@@ -8,6 +8,9 @@ import { TableComponent } from './components/table/table.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { BasicFormComponent } from './components/basic-form/basic-form.component';
+import { MaterialFormComponent } from './components/material-form/material-form.component';
+
 
 
 const routes: Routes = [
@@ -38,6 +41,18 @@ const routes: Routes = [
       {
         path: 'products/edit/:id',
         component: ProductEditComponent
+      },
+      {
+        path: 'basic',
+        component: BasicFormComponent
+      },
+      {
+        path: 'material',
+        component: MaterialFormComponent
+      },
+      {
+        path: 'categories',
+        loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
       },
     ]
   }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +20,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatStepperModule } from '@angular/material/stepper';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [],
@@ -41,7 +44,10 @@ import { MatStepperModule } from '@angular/material/stepper';
     LayoutModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatSliderModule
   ],
   exports: [
     MatButtonModule,
@@ -61,7 +67,9 @@ import { MatStepperModule } from '@angular/material/stepper';
     LayoutModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDatepickerModule,
+    MatSliderModule
   ]
 })
 export class MaterialModule { }

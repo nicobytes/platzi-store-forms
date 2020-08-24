@@ -1,0 +1,103 @@
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [formControl]="nameField">
+    <div class="messages" [class.active]="isNameFieldInvalid">
+      <mat-error *ngIf="nameField.hasError('required')">Este campo es requerido</mat-error>
+      <mat-error *ngIf="nameField.hasError('minlength')">Debe tener minimo 10 caracteres</mat-error>
+    </div>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailField">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <input type="color" matInput [formControl]="colorField">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput [formControl]="dateField" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Age</mat-label>
+    <input type="number" matInput [formControl]="ageField">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input type="tel" matInput [formControl]="phoneField">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input type="tel" matInput [formControl]="phoneField">
+  </mat-form-field>
+  <mat-slider min="1" max="5" [formControl]="stockField"></mat-slider>
+  <mat-form-field appearance="fill">
+    <mat-label>Text</mat-label>
+    <textarea matInput [formControl]="textField"></textarea>
+  </mat-form-field>
+</div>
+
+
+<p>
+  <label>
+    Category ({{categoryField.value}})
+    <select [formControl]="categoryField">
+      <option value="1">Category 1</option>
+      <option value="2">Category 2</option>
+      <option value="3">Category 3</option>
+    </select>
+  </label>
+</p>
+
+<p>
+  <label>
+    Tags ({{tagsField.value}})
+    <select [formControl]="tagsField" multiple>
+      <option value="1">Tag 1</option>
+      <option value="2">Tag 2</option>
+      <option value="3">Tag 3</option>
+    </select>
+  </label>
+</p>
+
+<p>
+  <label>
+    Agree ({{agreeField.value}})
+    <input type="checkbox" [formControl]="agreeField">
+  </label>
+</p>
+
+<p>
+  Gender ({{genderField.value}})
+  <label>
+    <input type="radio" name="gender" [formControl]="genderField" value="male">
+    Male
+  </label>
+  <label>
+    <input type="radio" name="gender" [formControl]="genderField" value="female">
+    Female
+  </label>
+  <label>
+    <input type="radio" name="gender" [formControl]="genderField" value="other">
+    Other
+  </label>
+</p>
+
+<p>
+  Zone ({{zoneField.value}})
+  <label>
+    <input type="radio" name="zone" [formControl]="zoneField" value="zone-1">
+    Zone 1
+  </label>
+  <label>
+    <input type="radio" name="zone" [formControl]="zoneField" value="zone-2">
+    Zone 2
+  </label>
+  <label>
+    <input type="radio" name="zone" [formControl]="zoneField" value="zone-3">
+    Zone 3
+  </label>
+</p>
